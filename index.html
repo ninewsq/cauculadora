@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Uma calculadora simples para operações do dia a dia."
+    />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="calculator" aria-label="Calculadora">
+      <header class="calculator__header">
+        <h1>Calculadora</h1>
+        <p>Simples e prática</p>
+      </header>
+
+      <section class="display" aria-label="Visor" aria-live="polite">
+        <div class="display__previous" id="previous-value"></div>
+        <output class="display__current" id="current-value">0</output>
+      </section>
+
+      <section class="keypad" aria-label="Teclado da calculadora">
+        <button class="key key--utility" data-action="clear" type="button">AC</button>
+        <button class="key key--utility" data-action="delete" type="button" aria-label="Apagar último dígito">⌫</button>
+        <button class="key key--operator" data-operator="÷" type="button" aria-label="Dividir">÷</button>
+        <button class="key key--operator" data-operator="×" type="button" aria-label="Multiplicar">×</button>
+
+        <button class="key" data-number="7" type="button">7</button>
+        <button class="key" data-number="8" type="button">8</button>
+        <button class="key" data-number="9" type="button">9</button>
+        <button class="key key--operator" data-operator="−" type="button" aria-label="Subtrair">−</button>
+
+        <button class="key" data-number="4" type="button">4</button>
+        <button class="key" data-number="5" type="button">5</button>
+        <button class="key" data-number="6" type="button">6</button>
+        <button class="key key--operator" data-operator="+" type="button" aria-label="Somar">+</button>
+
+        <button class="key" data-number="1" type="button">1</button>
+        <button class="key" data-number="2" type="button">2</button>
+        <button class="key" data-number="3" type="button">3</button>
+        <button class="key key--equals" data-action="equals" type="button" aria-label="Calcular">=</button>
+
+        <button class="key key--zero" data-number="0" type="button">0</button>
+        <button class="key" data-action="decimal" type="button" aria-label="Vírgula decimal">,</button>
+      </section>
+    </main>
+  </body>
+</html>

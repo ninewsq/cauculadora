@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  background: #10131d;
+  color: #f5f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 280px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(81 75 171 / 18%), transparent 52%),
+    #10131d;
+}
+
+.calculator {
+  width: min(100%, 360px);
+  padding: 28px;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 28px;
+  background: #191d2a;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 40%);
+}
+
+.calculator__header {
+  margin-bottom: 26px;
+}
+
+.calculator__header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.calculator__header p {
+  margin: 4px 0 0;
+  color: #858b9e;
+  font-size: 0.875rem;
+}
+
+.display {
+  min-height: 122px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 14px 2px 22px;
+  text-align: right;
+}
+
+.display__previous {
+  min-height: 25px;
+  color: #858b9e;
+  font-size: 1rem;
+}
+
+.display__current {
+  width: 100%;
+  overflow: hidden;
+  color: #f5f6fb;
+  font-size: clamp(2.5rem, 12vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.key {
+  min-width: 0;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 18px;
+  background: #252a39;
+  color: #f5f6fb;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 500;
+  transition:
+    background-color 140ms ease,
+    transform 140ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key:hover {
+  background: #303649;
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
+.key:focus-visible {
+  outline: 2px solid #a69cff;
+  outline-offset: 3px;
+}
+
+.key--utility {
+  background: #343044;
+  color: #c0b8ff;
+}
+
+.key--utility:hover {
+  background: #413b56;
+}
+
+.key--operator {
+  background: #292544;
+  color: #b8adff;
+  font-size: 1.5rem;
+}
+
+.key--operator:hover {
+  background: #39325f;
+}
+
+.key--equals {
+  grid-row: span 2;
+  aspect-ratio: auto;
+  background: #7667e8;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.key--equals:hover {
+  background: #887bf0;
+}
+
+.key--zero {
+  grid-column: span 2;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 360px) {
+  .calculator {
+    padding: 22px;
+  }
+
+  .keypad {
+    gap: 9px;
+  }
+
+  .key {
+    border-radius: 15px;
+  }
+}
